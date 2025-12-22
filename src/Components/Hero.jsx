@@ -2,6 +2,7 @@ import png from "../assets/Group.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Image from "../assets/avator.png";
 function Hero() {
   return (
     <>
@@ -60,8 +61,8 @@ function Hero() {
             clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0 100%)",
           }}
         >
-          <div className=" w-full flex justify-end  gap-5 ">
-            <nav className="text-white flex justify-center gap-10 mt-8">
+          <div className=" w-full flex justify-end  gap-5 px-2 ">
+            <nav className="text-white flex justify-center  gap-10 mt-8">
               <a href="">About me</a>
               <a href="">Skills</a>
               <a href="">PortFolio</a>
@@ -75,6 +76,9 @@ function Hero() {
               </a>
             </div>
           </div>
+          <div className="flex justify-center items-center">
+            <img src={Image} alt="" className="w-1/2" />
+          </div>
         </div>
       </div>
 
@@ -83,25 +87,49 @@ function Hero() {
       <div className="md:hidden relative block  w-full h-screen">
         {/* Left Div */}
         <div
-          className="bg-black absolute h-[65%] z-50 w-full"
+          className="bg-black relative h-[65%] z-10 w-full"
           style={{
             clipPath: "polygon(0% 0, 100% 0, 100% 80%, 0 100%)",
           }}
         >
-          <div className="px-8 py-4 flex justify-between items-center ">
+          {/* Hamburger And logo */}
+          <div className="px-8 py-4 flex justify-between items-center relative z-10 ">
             <img src={png} alt="PNG" className="invert w-8" />
             <RxHamburgerMenu size={30} color="white" />
           </div>
+
+          <div className="absolute flex w-full h-[65%] justify-center  items-center ">
+            <img src={Image} alt="avatar" className="w-[200px] " />
+          </div>
         </div>
+
         {/* --------------------------------Right div----------------------------------------- */}
-        <div className="bg-[#d7d7d7] bottom-0  text-black absolute w-full h-[35%] z-40">
-          <div>
-            <div className="text-3xl flex w-full font-semibold  mt-8 ml-10 flex-col gap-3">
+        <div className="bg-[#d7d7d7] text-white  bottom-0    absolute w-full h-[35%] backdrop-blur-lg z-40">
+          <div className="opacity-50 bg-black w-full   -top-27 inset-0 absolute"></div>
+          <div className="relative flex px-10">
+            <div className="md:text-3xl sm:text-xl  text-lg flex w-full font-semibold  mt-8  flex-col gap-3">
               <div>
                 <h1>Hi, I am</h1>
               </div>
-              <h1 className="ml-1">M Mudassir</h1>
+              <h1>M Mudassir</h1>
               <h2 className="text-lg"> Full-Stack Developer (MERN)</h2>
+            </div>
+            <div className="  flex flex-col gap-6">
+              <a href="https://github.com/mudassir-codes-sys" target="_blank">
+                <FaGithub size={30} color="white" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/m-mudassir-codes-sys/"
+                target="_blank"
+              >
+                <FaLinkedin size={30} color="white" />
+              </a>
+              <a
+                href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvkXKlKbVmzlCcZfNbhkHvJRqqvBDkxPzmcSMwhCcQQSHPgdVmhTJCBqfNZWRRrPZdGqZL"
+                target="_blank"
+              >
+                <MdAlternateEmail size={32} color="white" />
+              </a>
             </div>
           </div>
         </div>
