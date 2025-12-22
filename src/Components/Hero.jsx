@@ -3,18 +3,20 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "../assets/avator.png";
+import { useState } from "react";
 function Hero() {
+  const [burgerOpen, setBurgerOpen] = useState(false);
   return (
     <>
       <div className="relative w-full md:block  h-screen  hidden  overflow-hidden bg-[#d7d7d7]">
-        {/* Left Gray Section */}
+        {/* --------------------------------Left div------------------------------------ */}
         <div className="absolute inset-y-0 left-0 w-[55%] bg-[#d7d7d7] z-10">
           {/* Left Content */}
           <div className="mx-auto w-1/2 my-12 ">
             <img src={png} className="w-8" alt="" />
           </div>
 
-          {/* Name */}
+          {/* ---------------------------------Name------------------------------------------- */}
           <div className="flex  items-center  md:text-4xl lg:text-5xl  w-1/2 font-semibold mx-auto mt-22 my-10 gap-2">
             <h1 className="">Hi, </h1>
             <h2 className="">I </h2>
@@ -28,7 +30,7 @@ function Hero() {
               Full-Stack Developer (MERN)
             </h3>
           </div>
-          {/* Links  */}
+          {/* ----------------------------------Links------------------------------  */}
           <div className="w-1/2 mx-auto flex gap-5 mt-16">
             <div className="bg-[#c4c4c4] flex justify-center items-center w-10 h-10 ">
               <a href="https://github.com/mudassir-codes-sys" target="_blank">
@@ -54,7 +56,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Black Section with Tilt */}
+        {/* -----------------------------------Right div----------------------------------- */}
         <div
           className="absolute inset-y-0 right-0 w-[55%] bg-black z-20"
           style={{
@@ -69,7 +71,7 @@ function Hero() {
             </nav>
             <div className="mt-8 ">
               <a
-                className="bg-white text-black px-2 py-1   rounded-full mb-4"
+                className="bg-white text-black px-2 py-2   rounded-full mb-4"
                 href=""
               >
                 Contact Me
@@ -82,8 +84,10 @@ function Hero() {
         </div>
       </div>
 
-      {/* Mobile Approach */}
-      {/*--------------------upper---------------  */}
+      {/* -----------------------------------Mobile Approach---------------------------------- */}
+
+      {/*---------------------------------------UPPER--------------------------------------  */}
+
       <div className="md:hidden relative block  w-full h-screen">
         {/* Left Div */}
         <div
@@ -92,27 +96,49 @@ function Hero() {
             clipPath: "polygon(0% 0, 100% 0, 100% 80%, 0 100%)",
           }}
         >
-          {/* Hamburger And logo */}
-          <div className="px-8 py-4 flex justify-between items-center relative z-10 ">
+          {/* ------------------------------Hamburger And logo--------------------- */}
+          <div className="px-8 py-4 flex justify-between items-center relative z-50 ">
             <img src={png} alt="PNG" className="invert w-8" />
-            <RxHamburgerMenu size={30} color="white" />
+            <RxHamburgerMenu
+              onClick={() => setBurgerOpen(!burgerOpen)}
+              size={30}
+              color="white"
+            />
           </div>
+          {burgerOpen && (
+            <div className="absolute inset-0 h-80 z-40 bg-white/30 backdrop-blur-xl">
+              <nav className="text-white/80 font-semibold w-full flex flex-col justify-center items-center gap-10 mt-15">
+                <a onClick={() => setBurgerOpen(false)} href="">
+                  About me
+                </a>
+                <a onClick={() => setBurgerOpen(false)} href="">
+                  Skills
+                </a>
+                <a onClick={() => setBurgerOpen(false)} href="">
+                  PortFolio
+                </a>
+                <a onClick={() => setBurgerOpen(false)} href="">
+                  Contact Me
+                </a>
+              </nav>
+            </div>
+          )}
 
           <div className="absolute flex w-full h-[65%] justify-center  items-center ">
             <img src={Image} alt="avatar" className="w-[200px] " />
           </div>
         </div>
 
-        {/* --------------------------------Right div----------------------------------------- */}
-        <div className="bg-[#d7d7d7] text-white  bottom-0    absolute w-full h-[35%] backdrop-blur-lg z-40">
+        {/* --------------------------------Lower div----------------------------------------- */}
+        <div className=" text-white  bottom-0    absolute w-full h-[35%] backdrop-blur-lg z-40">
           <div className="opacity-50 bg-black w-full   -top-27 inset-0 absolute"></div>
           <div className="relative flex px-10">
-            <div className="md:text-3xl sm:text-xl  text-lg flex w-full font-semibold  mt-8  flex-col gap-3">
+            <div className=" sm:text-3xl  text-2xl flex w-full font-semibold  mt-8  flex-col gap-3">
               <div>
                 <h1>Hi, I am</h1>
               </div>
               <h1>M Mudassir</h1>
-              <h2 className="text-lg"> Full-Stack Developer (MERN)</h2>
+              <h2 className="text-lg "> Full-Stack Developer (MERN)</h2>
             </div>
             <div className="  flex flex-col gap-6">
               <a href="https://github.com/mudassir-codes-sys" target="_blank">

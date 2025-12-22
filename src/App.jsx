@@ -1,10 +1,14 @@
+import About from "./Components/About";
 import Hero from "./Components/Hero";
+import Skills from "./Components/Skills";
 
 function App() {
   return (
-    <div className="bg-[#d7d7d7]">
+    <>
       <Hero />
-    </div>
+      <About />
+      <Skills />
+    </>
   );
 }
 
