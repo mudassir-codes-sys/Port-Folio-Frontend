@@ -4,11 +4,14 @@ import { MdAlternateEmail } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "../assets/avator.png";
 import { useState } from "react";
-function Hero() {
+function Hero({ aboutRef }) {
   const [burgerOpen, setBurgerOpen] = useState(false);
   return (
     <>
-      <div className="relative w-full md:block  h-screen  hidden  overflow-hidden bg-[#d7d7d7]">
+      <div
+        id="top"
+        className="relative w-full md:block  h-screen  hidden  overflow-hidden bg-[#d7d7d7]"
+      >
         {/* --------------------------------Left div------------------------------------ */}
         <div className="absolute inset-y-0 left-0 w-[55%] bg-[#d7d7d7] z-10">
           {/* Left Content */}
@@ -65,14 +68,14 @@ function Hero() {
         >
           <div className=" w-full flex justify-end  gap-5 px-2 ">
             <nav className="text-white flex justify-center  gap-10 mt-8">
-              <a href="">About me</a>
-              <a href="">Skills</a>
-              <a href="">PortFolio</a>
+              <a href="#about">About me</a>
+              <a href="#skills">Skills</a>
+              <a href="#portfolio">PortFolio</a>
             </nav>
             <div className="mt-8 ">
               <a
                 className="bg-white text-black px-2 py-2   rounded-full mb-4"
-                href=""
+                href="#contact"
               >
                 Contact Me
               </a>

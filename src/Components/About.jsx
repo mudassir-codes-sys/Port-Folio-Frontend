@@ -6,7 +6,7 @@ import { FaTools } from "react-icons/fa";
 
 function About() {
   return (
-    <div className="bg-[#d7d7d7] w-full h-auto">
+    <div id="about" className="bg-[#d7d7d7] w-full h-auto">
       <div className="pt-32 flex justify-center ">
         <h1 className=" text-4xl border-4 px-15 py-4 font-bold inline">
           About Me

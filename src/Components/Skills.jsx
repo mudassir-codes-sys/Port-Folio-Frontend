@@ -13,7 +13,7 @@ import { SiNpm } from "react-icons/si";
 
 function Skills() {
   return (
-    <div className="bg-[#d7d7d7] px-5">
+    <div id="skills" className="bg-[#d7d7d7] px-5">
       <div className="pt-32 flex mb-20 justify-center ">
         <h1 className=" text-4xl border-4 px-15 py-4 font-bold inline">
           SKILLS
