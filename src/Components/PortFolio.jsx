@@ -163,9 +163,9 @@ function PortFolio() {
                 )}
               </div>
               <div className="p-3 pb-8 px-5 flex  items-center justify-between">
-                <div className="flex items-center  gap-1">
+                <div className="flex items-center  gap-2">
                   <p className="w-2 h-2 bg-green-500 rounded-full"></p>
-                  <p className="font-semibold"> {project.status}</p>
+                  <p className="font-semibold text-lg"> {project.status}</p>
                 </div>
                 <a href={project.liveUrl} target="_blank">
                   {" "}
