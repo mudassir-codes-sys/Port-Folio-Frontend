@@ -56,7 +56,7 @@ function PortFolio() {
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: easeOut, delay: 0.2 }}
-          className="grid px-10 pt-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10"
+          className="grid sm:px-10  px-2 pt-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10"
         >
           {projects.map((project) => (
             <div
@@ -106,9 +106,9 @@ function PortFolio() {
                 </p>
               </div>
 
-              <div className="flex gap-4  p-3  ">
+              <div className="flex sm:gap-4 gap-2 overflow-x-auto p-2  ">
                 {project.tech.map((t) => (
-                  <h1 className="px-4 py-1 rounded-md font-semibold  bg-[#bebebe] ">
+                  <h1 className="px-2 py-1 rounded-md text-xs  bg-[#bebebe] ">
                     {t}
                   </h1>
                 ))}
