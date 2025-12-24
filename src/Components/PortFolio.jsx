@@ -165,7 +165,7 @@ function PortFolio() {
               <div className="p-3 pb-8 px-5 flex  items-center justify-between">
                 <div className="flex items-center  gap-1">
                   <p className="w-2 h-2 bg-green-500 rounded-full"></p>
-                  <p>{project.status}</p>
+                  <p className="font-semibold"> {project.status}</p>
                 </div>
                 <a href={project.liveUrl} target="_blank">
                   {" "}
@@ -198,9 +198,7 @@ function PortFolio() {
             )}
           </div>
         )}
-      </div>
-      <div className="flex justify-center bg-black text-white">
-        <h2 className="text-xl">And many more to come</h2>
+        <Lines />
       </div>
     </>
   );

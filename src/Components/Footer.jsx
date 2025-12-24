@@ -5,7 +5,7 @@ function FooterLast() {
   return (
     <footer className="bg-[#1a1a1a] p-10 flex justify-center  text-white ">
       <div className="">
-        <a href="#top" className="flex flex-col cursor-pointer items-center ">
+        <a  onClick={()=>window.scrollTo({top:0  , behavior:'smooth'})} className="flex flex-col cursor-pointer items-center ">
           <FaAngleDoubleUp />
           Back To Top
         </a>

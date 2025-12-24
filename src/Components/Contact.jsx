@@ -83,7 +83,7 @@ function Contact() {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="resize-none border-l-5 p-2 border-b-5  "
+            className="resize-none outline-none border-l-5 p-2 border-b-5  "
             placeholder="YOUR MESSAGE"
             required
           />
