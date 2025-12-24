@@ -2,6 +2,7 @@ import { useState } from "react";
 import Lines from "../Lines";
 import axios from "axios";
 import { toast } from "sonner";
+
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ function Contact() {
     e.preventDefault();
     let id;
     try {
-     id = toast.loading("Sending");
+      id = toast.loading("Sending");
       setLoading(true);
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/send/email",
@@ -21,8 +22,12 @@ function Contact() {
       );
       if (res.data.success) {
         toast.success("Sent", { id });
+        setName("");
+        setEmail("");
+        setNumber("");
+        setMessage("");
       } else {
-        toast.error(res.data.message);
+        toast.error(res.data.message, { id });
       }
     } catch (error) {
       if (id) toast.dismiss(id);
@@ -42,7 +47,7 @@ function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-16 w-full max-w-md mx-auto mt-10"
+          className="flex flex-col gap-16 p-10 w-full max-w-md mx-auto mt-10"
         >
           <input
             value={name}

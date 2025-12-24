@@ -10,10 +10,11 @@ import { FaGithub } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { SiPostman } from "react-icons/si";
 import { SiNpm } from "react-icons/si";
+import { easeOut, motion } from "framer-motion";
 
 function Skills() {
   return (
-    <div id="skills" className="bg-[#d7d7d7] px-5">
+    <div id="skills" className="bg-[#d7d7d7] px-14">
       <div className="pt-32 flex mb-20 justify-center ">
         <h1 className=" text-4xl border-4 px-15 py-4 font-bold inline">
           SKILLS
@@ -28,26 +29,51 @@ function Skills() {
       </div>
 
       <div className="md:flex justify-center items-center  grid sm:grid-cols-4 grid-cols-3 gap-20 mt-12">
-        <div className="flex flex-col items-center gap-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <FaHtml5 color="#E34F26" size={80} />
           <p className="text-lg ">Html</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <FaCss3 size={80} color="#1572B6" />
           <p className="text-lg ">CSS</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <img src={Js} className="w-20 h-20" alt="" />
           <p className="text-lg ">JavaScript</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <FaReact color="#61DAFB" size={80} />
           <p className="text-lg ">React</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <RiTailwindCssFill color="#38BDF8" size={80} />
           <p className="text-lg ">Tailwind</p>
-        </div>
+        </motion.div>
       </div>
 
       {/* BackEnd */}
@@ -59,26 +85,51 @@ function Skills() {
       </div>
 
       <div className="md:flex justify-center   items-center gap-20 mt-12   grid sm:grid-cols-4 grid-cols-3">
-        <div className="flex flex-col items-center gap-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <DiMongodb color="#47A248" size={80} />
           <p className="text-lg ">MongoDB</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          className="flex flex-col items-center gap-2"
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+        >
           <img src={Express} className="w-20 h-20" alt="" />
           <p className="text-lg ">ExpressJs</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <FaNodeJs color="#339933" size={80} />
           <p className="text-lg ">NodeJs</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <DiMysql color="#4479A1" size={80} />
           <p className="text-lg ">MySQL</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <img src={Api} color="#ff6f00" className="w-20 h-20" alt="" />
           <p className="text-lg ">Rest API</p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Tools */}
@@ -90,26 +141,51 @@ function Skills() {
       </div>
 
       <div className="md:flex justify-center   items-center gap-20 mt-12  grid sm:grid-cols-4 grid-cols-3">
-        <div className="flex flex-col items-center gap-2">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <IoIosGitMerge color="#F05032" size={80} />
           <p className="text-lg ">Git</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <FaGithub size={80} color="#181717" />
           <p className="text-lg ">GitHub</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <VscVscode size={80} color="#007ACC" />
           <p className="text-lg ">Vs Code</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <SiPostman color="#FF6C37" size={80} />
           <p className="text-lg ">Postman</p>
-        </div>
-        <div className="flex flex-col items-center gap-2">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
+          className="flex flex-col items-center gap-2"
+        >
           <SiNpm color="#CB3837" size={80} />
           <p className="text-lg ">npm</p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

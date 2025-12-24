@@ -9,7 +9,7 @@ function FooterLast() {
           <FaAngleDoubleUp />
           Back To Top
         </a>
-        <div className="flex  gap-4 mt-5 items-center justify-center">
+        <div className="flex  gap-6 mt-5 items-center justify-center">
           <a href="https://github.com/mudassir-codes-sys" target="_blank">
             <FaGithub size={25} />
           </a>

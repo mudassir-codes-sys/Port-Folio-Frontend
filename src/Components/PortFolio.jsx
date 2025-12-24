@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Lines from "../Lines";
 import axios from "axios";
+import { motion, easeOut } from "framer-motion";
 
 function PortFolio() {
   const [projects, setProjects] = useState([]);
@@ -51,11 +52,16 @@ function PortFolio() {
           <h1 className="text-4xl  border-4 px-12 py-4 font-bold">PORTFOLIO</h1>
         </div>
         <Lines />
-        <div className="grid px-10 pt-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: easeOut, delay: 0.2 }}
+          className="grid px-10 pt-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10"
+        >
           {projects.map((project) => (
             <div
               key={project._id}
-              className="bg-gray-300 shadow-2xl rounded-xl overflow-hidden shadow-lg"
+              className="bg-gray-300 shadow-2xl rounded-xl overflow-hidden "
             >
               <div
                 className="relative h-60 cursor-zoom-in overflow-hidden"
@@ -170,7 +176,7 @@ function PortFolio() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
         {showModal && (
           <div
             className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
