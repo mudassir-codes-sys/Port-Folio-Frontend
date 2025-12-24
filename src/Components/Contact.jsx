@@ -18,8 +18,15 @@ function Contact() {
       setLoading(true);
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/send/email",
-        { name, email, number, message }
+        {
+          name,
+          email,
+          number,
+          message,
+        }
       );
+      // console.log( import.meta.env.VITE_BACKEND_URL+"/send/email");
+
       if (res.data.success) {
         toast.success("Sent", { id });
         setName("");
