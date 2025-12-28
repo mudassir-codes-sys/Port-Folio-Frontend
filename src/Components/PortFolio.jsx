@@ -47,7 +47,7 @@ function PortFolio() {
 
   return (
     <>
-      <div className="bg-[#d7d7d7] p-5  " id="portfolio">
+      <div className="bg-[#d7d7d7] p-5   " id="portfolio">
         <div className="pt-32 flex mb-20 justify-center">
           <h1 className="text-4xl  border-4 px-12 py-4 font-bold">PORTFOLIO</h1>
         </div>
@@ -56,12 +56,12 @@ function PortFolio() {
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: easeOut, delay: 0.2 }}
-          className="grid sm:px-10  px-2 pt-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10"
+          className="grid sm:px-10  px-2 pt-16 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-10"
         >
           {projects.map((project) => (
             <div
               key={project._id}
-              className="bg-gray-300 shadow-2xl rounded-xl overflow-hidden "
+              className="bg-gray-300 shadow-2xl  rounded-xl overflow-hidden "
             >
               <div
                 className="relative h-60 cursor-zoom-in overflow-hidden"
@@ -101,7 +101,7 @@ function PortFolio() {
               </div>
               <div className="px-4 py-2">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-sm text-gray-600 mt-1 line-clamp-3">
+                <p className="text-sm text-gray-600 mt-1 ">
                   {project.description}
                 </p>
               </div>
