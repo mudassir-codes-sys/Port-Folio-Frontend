@@ -41,7 +41,7 @@ function About() {
         <motion.div
           initial={{ opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 60 : 0 }}
           whileInView={{ opacity: 100, x: 0, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="lg:max-w-sm  w-full"
         >
           <div className="flex gap-3 items-center">
@@ -58,7 +58,7 @@ function About() {
         <motion.div
           initial={{ opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 60 : 0 }}
           whileInView={{ opacity: 100, x: 0, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className=" w-full lg:max-w-md"
         >
           <div className="flex gap-3 items-center">
@@ -78,7 +78,7 @@ function About() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 100, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
         className="sm:mt-20 mt-10  flex sm:justify-center justify-start   pb-25 flex-col  items-start sm:items-center px-4"
       >
         <div className="sm:max-w-md w-full">

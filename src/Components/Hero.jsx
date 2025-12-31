@@ -5,6 +5,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "../assets/avator.png";
 import { useState } from "react";
 import { easeIn, motion } from "framer-motion";
+import StarsBackground from "./StarsBackgeound";
+import CombinedAnimatedBackground from "./StarsBackgeound";
 function Hero() {
   const [burgerOpen, setBurgerOpen] = useState(false);
   return (
@@ -72,6 +74,7 @@ function Hero() {
             clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0 100%)",
           }}
         >
+          <StarsBackground />
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 100, x: 0 }}
@@ -109,6 +112,7 @@ function Hero() {
 
       <div className="md:hidden relative block  w-full h-screen">
         {/* Left Div */}
+
         <div
           className="bg-black relative h-[65%] z-10 w-full"
           style={{
@@ -159,6 +163,7 @@ function Hero() {
             transition={{ duration: 0.8, ease: easeIn }}
             className="absolute flex w-full h-[65%] justify-center  items-center "
           >
+            <StarsBackground /> 
             <img src={Image} alt="avatar" className="w-[200px] " />
           </motion.div>
         </div>

@@ -47,7 +47,7 @@ function PortFolio() {
 
   return (
     <>
-      <div className="bg-[#d7d7d7] p-5   " id="portfolio">
+      <div className="bg-[#d7d7d7] p-5  relative z-2  " id="portfolio">
         <div className="pt-32 flex mb-20 justify-center">
           <h1 className="text-4xl  border-4 px-12 py-4 font-bold">PORTFOLIO</h1>
         </div>
