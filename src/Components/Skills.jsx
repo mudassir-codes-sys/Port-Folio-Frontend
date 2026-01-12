@@ -25,7 +25,7 @@ function Skills() {
       {/* Frontend */}
       <div className="max-w-3xl mx-auto ">
         <div className="mt-6 ">
-          <h2 className="text-2xl font-bold">FrontEnd :</h2>
+          <h2 className="text-2xl font-bold">Frontend :</h2>
         </div>
       </div>
       <div>
