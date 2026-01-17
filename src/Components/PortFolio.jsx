@@ -13,7 +13,7 @@ function PortFolio() {
   const getProducts = async () => {
     try {
       const res = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + "/project/get"
+        import.meta.env.VITE_BACKEND_URL + "/project/get",
       );
       if (res.data.success) setProjects(res.data.projects);
     } catch (error) {
@@ -61,7 +61,7 @@ function PortFolio() {
           {projects.map((project) => (
             <div
               key={project._id}
-              className="bg-gray-300 shadow-2xl  rounded-xl overflow-hidden "
+              className="bg-gray-200 shadow-2xl  rounded-xl overflow-hidden "
             >
               <div
                 className="relative h-60 cursor-zoom-in overflow-hidden"
@@ -108,7 +108,7 @@ function PortFolio() {
 
               <div className="flex sm:gap-4 gap-2 overflow-x-auto p-2  ">
                 {project.tech.map((t) => (
-                  <h1 className="px-2 py-1 rounded-md text-xs  bg-[#bebebe] ">
+                  <h1 className="px-2 py-1 rounded-md text-xs  bg-black text-white font-semibold ">
                     {t}
                   </h1>
                 ))}
