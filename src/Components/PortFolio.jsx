@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Lines from "../Lines";
 import axios from "axios";
 import { motion, easeOut } from "framer-motion";
@@ -24,18 +24,18 @@ function PortFolio() {
   useEffect(() => {
     getProducts();
   }, []);
-
-  useEffect(() => {
+  const defaultActiveImages = useMemo(() => {
     const defaults = {};
     projects.forEach((project) => {
-      if (project.images?.length > 0) {
-        defaults[project._id] = project.images[0];
-      } else if (project.video) {
-        defaults[project._id] = project.video;
-      }
+      if (project.images?.length > 0) defaults[project._id] = project.images[0];
+      else if (project.video) defaults[project._id] = project.video;
     });
-    setActiveImages(defaults);
+    return defaults;
   }, [projects]);
+
+  useEffect(() => {
+    setActiveImages(defaultActiveImages);
+  }, [defaultActiveImages]);
 
   const handleVideoPlay = (id) => {
     setPlayingVideos((prev) => ({ ...prev, [id]: true }));
@@ -47,7 +47,7 @@ function PortFolio() {
 
   return (
     <>
-      <div className="bg-[#d7d7d7] p-5  relative z-2  " id="portfolio">
+      <div className="bg-[#d7d7d7] p-5 relative z-2  " id="portfolio">
         <div className="pt-32 flex mb-20 justify-center">
           <h1 className="text-4xl  border-4 px-12 py-4 font-bold">PORTFOLIO</h1>
         </div>
@@ -61,7 +61,7 @@ function PortFolio() {
           {projects.map((project) => (
             <div
               key={project._id}
-              className="bg-gray-200 shadow-2xl  rounded-xl overflow-hidden "
+              className="bg-gray-200 shadow-2xl h-full flex flex-col  rounded-xl overflow-hidden "
             >
               <div
                 className="relative h-60 cursor-zoom-in overflow-hidden"
@@ -94,7 +94,7 @@ function PortFolio() {
                 ) : (
                   <img
                     src={activeImages[project._id]}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform"
+                    className="w-full h-full object-center hover:scale-110 transition-transform"
                     alt={project.title}
                   />
                 )}
@@ -106,9 +106,9 @@ function PortFolio() {
                 </p>
               </div>
 
-              <div className="flex sm:gap-4 gap-2 overflow-x-auto p-2  ">
+              <div className="flex sm:gap-x-4 flex-wrap gap-2  p-2  ">
                 {project.tech.map((t) => (
-                  <h1 className="px-2 py-1 rounded-md text-xs  bg-black text-white font-semibold ">
+                  <h1 className="px-2 py-1 rounded-md text-xs bg-black text-white font-semibold ">
                     {t}
                   </h1>
                 ))}
@@ -162,14 +162,14 @@ function PortFolio() {
                   </div>
                 )}
               </div>
-              <div className="p-3 pb-8 px-5 flex  items-center justify-between">
+              <div className="p-3 pb-8 px-5 flex  items-center mt-auto justify-between">
                 <div className="flex items-center  gap-2">
                   <p className="w-2 h-2 bg-green-500 rounded-full"></p>
                   <p className="font-semibold text-lg"> {project.status}</p>
                 </div>
                 <a href={project.liveUrl} target="_blank">
                   {" "}
-                  <button className="bg-black px-4 rounded-md py-1 cursor-pointer text-white">
+                  <button className="bg-black px-4 rounded-md py-1  cursor-pointer text-white">
                     View Live
                   </button>{" "}
                 </a>

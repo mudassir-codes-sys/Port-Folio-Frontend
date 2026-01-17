@@ -6,6 +6,15 @@ body {
   scroll-behavior: smooth;
   font-family: "Inter";
 }
+/* Horizontal scroll container */
+.scroll-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scroll-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 h1,
 h2,
