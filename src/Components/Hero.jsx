@@ -6,7 +6,6 @@ import Image from "../assets/avator.png";
 import { useState } from "react";
 import { easeIn, motion } from "framer-motion";
 import StarsBackground from "./StarsBackgeound";
-import CombinedAnimatedBackground from "./StarsBackgeound";
 function Hero() {
   const [burgerOpen, setBurgerOpen] = useState(false);
   return (
@@ -163,7 +162,7 @@ function Hero() {
             transition={{ duration: 0.8, ease: easeIn }}
             className="absolute flex w-full h-[65%] justify-center  items-center "
           >
-            <StarsBackground /> 
+            <StarsBackground />
             <img src={Image} alt="avatar" className="w-[200px] " />
           </motion.div>
         </div>
