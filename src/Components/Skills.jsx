@@ -17,6 +17,7 @@ import { SiNpm } from "react-icons/si";
 import { easeOut, motion } from "framer-motion";
 import AnimatedIcons from "./IconBg";
 import { useState } from "react";
+import Heading from "./Heading";
 
 const sectionEmoji = {
   Frontend: "🎨",
@@ -55,21 +56,15 @@ const skillsList = {
   Others: [
     { name: "Zod", icon: SiZod, color: "#7C3AED", level: 80 },
     { name: "Redux Toolkit", icon: SiRedux, color: "#764ABC", level: 80 },
+    { name: "Python", icon: SiRedux, color: "#764ABC", level: 60 },
   ],
 };
 
 function Skills() {
   const [selected, setSelected] = useState("Frontend");
   return (
-    <div
-      id="skills"
-      className="bg-[#d7d7d7] min-h-screen max-h-auto px-10 relative "
-    >
-      <div className="pt-32 flex mb-20 justify-center ">
-        <h1 className=" text-4xl border-4 px-15 py-4 font-bold inline">
-          SKILLS
-        </h1>
-      </div>
+    <div id="skills" className="bg-[#d7d7d7] max-h-auto px-10 relative ">
+      <Heading title="Skills" />
 
       {/* Frontend */}
 
@@ -80,18 +75,18 @@ function Skills() {
         initial={{ scale: 0.96, opacity: 0.95 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="w-full z-50 relative flex md:flex-row flex-col   gap-4"
+        className="w-full z-50 relative flex md:flex-row flex-col pt-14 gap-4"
       >
         {/* left */}
 
-        <div className="flex md:flex-col flex-row  md:overflow-hidden scroll-hide overflow-x-auto gap-4 ">
+        <div className="flex md:flex-col flex-row md:overflow-hidden scroll-hide overflow-x-auto gap-4 ">
           {Object.keys(skillsList).map((s) => {
             return (
               <div
                 key={s}
                 onClick={() => setSelected(s)}
                 className={`cursor-pointer text-white sm:p-5 p-2 md:min-w-59 lg:min-w-95 rounded-lg flex gap-2 items-center
-        ${selected === s ? "bg-[#1F2937]" : "bg-black hover:bg-[#1F2937]"}`}
+        ${selected === s ? "bg-black" : "bg-[#1A1A1A] hover:bg-black"}`}
               >
                 <span className="text-lg">{sectionEmoji[s]}</span>
                 <h1 className=" ">{s}</h1>
@@ -111,13 +106,13 @@ function Skills() {
             return (
               <div key={skill.name} className="flex flex-col  justify-center">
                 <h4 className="my-3 ">{skill.name}</h4>
-                <div className="h-2 bg-[#1F2937] rounded-full overflow-hidden">
+                <div className="h-2 bg-[#1a1a1a] rounded-full overflow-hidden">
                   <motion.div
                     key={selected}
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="h-full rounded-full bg-gray-400"
+                    className="h-full rounded-full bg-[#d7d7d7]"
                   />
                 </div>
               </div>

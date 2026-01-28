@@ -4,16 +4,26 @@ import { FaPenNib } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Heading from "./Heading";
+
+const cardInfo = [
+  {
+    title: "DESIGN",
+    icon: FaPenNib,
+    para: "I focus on creating clean, modern, and user-friendly interfaces. My goal is to design layouts that are visually appealing and easy to use across all devices.",
+  },
+  {
+    title: "Development",
+    icon: FaCode,
+    para: "I build scalable and efficient web applications using the MERN stack. I enjoy turning ideas into functional products with clean and maintainable code.",
+  },
+];
 
 function About() {
   const isMobile = window.innerWidth < 640;
   return (
     <div id="about" className="bg-[#d7d7d7] w-full p-5 h-auto">
-      <div className="pt-32 flex justify-center ">
-        <h1 className=" text-2xl md:text-4xl border-4 px-15 py-4 font-bold inline">
-          About Me
-        </h1>
-      </div>
+      <Heading title="About Me" />
 
       {/* ---------------------para-------------------- */}
       <div className="flex pt-10  px-10 mx-auto max-w-lg justify-center">
@@ -38,41 +48,26 @@ function About() {
         className="flex lg:gap-0  flex-col sm:flex-row gap-8  justify-between
          items-center mt-28 lg:px-20 px-3 "
       >
-        <motion.div
-          initial={{ opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 60 : 0 }}
-          whileInView={{ opacity: 100, x: 0, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="lg:max-w-sm  w-full"
-        >
-          <div className="flex gap-3 items-center">
-            <h3 className="text-2xl font-bold">DESIGN</h3>
-            <FaPenNib size={22} />
-          </div>
+        {cardInfo.map((card, i) => (
+          <motion.div
+            key={i}
+            initial={{
+              opacity: 0,
+              x: isMobile ? 0 : -60,
+              y: isMobile ? 60 : 0,
+            }}
+            whileInView={{ opacity: 100, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:max-w-sm  w-full"
+          >
+            <div className="flex gap-3 items-center">
+              <h3 className="text-2xl font-bold">{card.title}</h3>
+              <card.icon size={22} />
+            </div>
 
-          <p className="pt-3">
-            I focus on creating clean, modern, and user-friendly interfaces. My
-            goal is to design layouts that are visually appealing and easy to
-            use across all devices.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: isMobile ? 0 : -60, y: isMobile ? 60 : 0 }}
-          whileInView={{ opacity: 100, x: 0, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className=" w-full lg:max-w-md"
-        >
-          <div className="flex gap-3 items-center">
-            <h3 className="text-2xl font-bold">Development</h3>
-
-            <FaCode size={22} />
-          </div>
-
-          <p className="pt-3">
-            I build scalable and efficient web applications using the MERN
-            stack. I enjoy turning ideas into functional products with clean and
-            maintainable code.
-          </p>
-        </motion.div>
+            <p className="pt-3">{card.para}</p>
+          </motion.div>
+        ))}
       </div>
 
       <motion.div
