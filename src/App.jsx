@@ -6,6 +6,7 @@ import Hero from "./Components/Hero";
 import PortFolio from "./Components/PortFolio";
 import Skills from "./Components/Skills";
 import { Toaster } from "sonner";
+import Experience from "./Components/Experience";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <About />
       <Skills />
+      <Experience />
       <PortFolio />
       <Contact />
       <FooterLast />
